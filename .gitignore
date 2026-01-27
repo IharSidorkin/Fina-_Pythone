@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+env/
+/opt/miniconda3/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Data and Visuals (если хочешь, чтобы графики не грузились)
+# visuals/
