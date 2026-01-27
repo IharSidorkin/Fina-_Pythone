@@ -12,8 +12,17 @@ Projekt obejmuje:
 - Trenowanie modelu Random Forest i porównanie go z Logistic Regression.
 - Wyświetlanie raportów klasyfikacji i dokładności modelu.
 
+
+Cel projektu:
+--------------
+- Projekt edukacyjny dotyczący uczenia maszynowego
+- Prezentacja pełnego ML-pipeline: od danych do modelu
+- Nadaje się do analizy danych medycznych, eksperymentów z modelami i wizualizacji
+
+
 Struktura projektu:
 ------------------
+```text
 Fina-_Pythone/
   main.py                 - Główny skrypt do uruchomienia projektu
   test_main.py            - Testy jednostkowe sprawdzające przetwarzanie danych
@@ -22,21 +31,25 @@ Fina-_Pythone/
   masz/
     Data.py               - Klasa DataProcessor do pracy z danymi
     modelm.py             - Klasa ModelManager do modeli uczenia maszynowego
+```
 
 Instalacja i uruchomienie:
 --------------------------
 1. Klonowanie repozytorium:
-   git clone https://github.com/IharSidorkin/Fina-_Pythone.git
+```Bash
+    git clone https://github.com/IharSidorkin/Fina-_Pythone.git
    cd Fina-_Pythone
-
-2. Instalacja zależności:
+```
+3. Instalacja zależności:
    Zaleca się użycie wirtualnego środowiska:
+  ```Bash
    python -m venv venv
    source venv/bin/activate   (Linux/macOS)
    venv\Scripts\activate     (Windows)
    pip install -r requirements
+```
 
-3. Uruchomienie projektu:
+4. Uruchomienie projektu:
    python main.py
 
    Projekt wykona następujące kroki:
@@ -46,24 +59,27 @@ Instalacja i uruchomienie:
    4. Wytrenuje Random Forest i porówna z Logistic Regression
    5. Wyświetli dokładność i raport klasyfikacji
 
-4. Uruchomienie testów:
+5. Uruchomienie testów:
    python test_main.py
    Sprawdza poprawność działania metody _clean_age() w DataProcessor.
 
 Opis modułów:
 -------------
+```Bash
 DataProcessor (masz/Data.py)
   - load_data()           - pobieranie danych z Kaggle
   - _clean_age()          - czyszczenie kolumny wieku
   - exploratory_analysis()- analiza i wizualizacja danych
   - preprocess_data()     - przygotowanie danych do modeli (kodowanie, podział train/test, skalowanie)
+```
 
 ModelManager (masz/modelm.py)
+```Bash
   - train_random_forest(X_train, y_train)  - trenowanie Random Forest
   - train_with_optimization(X_train, y_train) - GridSearchCV do wyboru najlepszych parametrów
   - evaluate(X_test, y_test)               - ocena dokładności modelu i raport klasyfikacji
   - compare_models(X_train, y_train, X_test, y_test) - porównanie Random Forest i Logistic Regression
-
+```
 Wizualizacje:
 --------------
 - Wszystkie wykresy są zapisywane w folderze visuals/
@@ -94,6 +110,7 @@ precision    recall  f1-score   support
 
 Wymagania:
 -----------
+```Bash
 - Python 3.8+
 - pandas
 - matplotlib
@@ -101,14 +118,4 @@ Wymagania:
 - scikit-learn
 - kagglehub
 - os (moduł wbudowany w Python)
-
-Uwagi:
-------
-1. Dane pobierane są z Kaggle Dataset: Coronavirus Dataset.
-2. W main.py upewnij się, że metody ModelManager odpowiadają rzeczywistym (train_random_forest, compare_models, evaluate).
-
-Cel projektu:
---------------
-- Projekt edukacyjny dotyczący uczenia maszynowego
-- Prezentacja pełnego ML-pipeline: od danych do modelu
-- Nadaje się do analizy danych medycznych, eksperymentów z modelami i wizualizacji
+```
