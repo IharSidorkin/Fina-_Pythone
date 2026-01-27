@@ -8,3 +8,28 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# macOS
+.DS_Store
+
+# PyCharm / IDEA
+.idea/
+*.iml
+out/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
