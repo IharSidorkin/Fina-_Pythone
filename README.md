@@ -38,7 +38,7 @@ Instalacja i uruchomienie:
 1. Klonowanie repozytorium:
 ```Bash
     git clone https://github.com/IharSidorkin/Fina-_Pythone.git
-   cd Fina-_Pythone
+    cd Fina-_Pythone
 ```
 3. Instalacja zależności:
    
