@@ -11,12 +11,12 @@ class ModelManager:
         self.model = None
 
     def train_random_forest(self, X_train, y_train):
-        print("\n[INFO] Training Random Forest...")
+        print("\nTraining Random Forest")
         self.model = RandomForestClassifier(n_estimators=100, random_state=42)
         self.model.fit(X_train, y_train)
 
     def train_with_optimization(self, X_train, y_train):
-        print("\n[INFO] Fine tuning (GridSearch)...")
+        print("\nFine tuning (GridSearch)")
         param_grid = {
             'n_estimators': [50, 100],
             'max_depth': [10, 20],
@@ -27,14 +27,14 @@ class ModelManager:
         self.model = grid_search.best_estimator_
 
     def evaluate(self, X_test, y_test):
-        print("\n--- 10. Evaluation Results ---")
+        print("\nEvaluation Results")
         y_pred = self.model.predict(X_test)
         print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
         print("\nClassification Report:")
         print(classification_report(y_test, y_pred))
 
     def compare_models(self, X_train, y_train, X_test, y_test):
-        print("\n--- Comparison with Logistic Regression ---")
+        print("\nComparison with Logistic Regression")
         lr = LogisticRegression()
         lr.fit(X_train, y_train)
         print(f"Logistic Regression Accuracy: {lr.score(X_test, y_test):.4f}")

@@ -17,7 +17,7 @@ class DataProcessor:
         self.encoders = {}
 
     def load_data(self):
-        print("[INFO] Downloading data from Kaggle...")
+        print("Downloading data from Kaggle")
         path = kagglehub.dataset_download("kimjihoo/coronavirusdataset")
         filepath = os.path.join(path, "PatientInfo.csv")
 
@@ -25,7 +25,7 @@ class DataProcessor:
             raise FileNotFoundError(f"File PatientInfo.csv not found in {path}")
 
         self.df = pd.read_csv(filepath)
-        print(f"[INFO] Data loaded. Total rows: {len(self.df)}")
+        print(f"Data loaded. Total rows: {len(self.df)}")
 
     def _clean_age(self, dataframe):
         df_copy = dataframe.copy()
@@ -36,7 +36,7 @@ class DataProcessor:
 
     def exploratory_analysis(self):
 
-        print("\n--- 4. Statistical Analysis: Clinical Risk Factors ---")
+        print("\n Statistical Analysis: Clinical Risk Factors")
 
 
         temp_df = self._clean_age(self.df).dropna(subset=['age', 'sex', 'state', 'infection_case'])
@@ -71,13 +71,13 @@ class DataProcessor:
 
         corr_path = os.path.join(output_dir, "correlation_matrix.png")
         plt.savefig(corr_path)
-        print(f"[INFO] Correlation plot saved to: {corr_path}")
+        print(f"Correlation plot saved to: {corr_path}")
 
         plt.show()
 
     def preprocess_data(self):
 
-        print("\n[INFO] Preprocessing data for machine learning...")
+        print("\nPreprocessing data for machine learning...")
 
 
         self.df = self.df[self.df['state'].isin(['released', 'deceased'])].copy()
