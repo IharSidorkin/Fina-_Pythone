@@ -41,11 +41,11 @@ Instalacja i uruchomienie:
    cd Fina-_Pythone
 ```
 3. Instalacja zależności:
-   Zaleca się użycie wirtualnego środowiska:
+   
   ```Bash
    python -m venv venv
-   source venv/bin/activate   (Linux/macOS)
-   venv\Scripts\activate     (Windows)
+   source venv/bin/activate - macOS / linux
+   venv\Scripts\activate  -   (if you working on Windows)
    pip install -r requirements
 ```
 
